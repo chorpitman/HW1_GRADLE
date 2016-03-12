@@ -1,0 +1,6 @@
+rootProject.name = 'HW3: Ant, Maven, Gradle'
+
+include 'utils'
+include 'services'
+include 'admin'
+include 'web'

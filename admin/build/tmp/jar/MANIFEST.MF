@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.builders.admin.AdminEntryPoint
+Class-Path: javax.servlet-api-3.0.1.jar services.jar utils.jar
+

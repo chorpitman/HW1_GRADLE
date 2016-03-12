@@ -1,0 +1,9 @@
+apply plugin: 'war'
+
+ war {
+	archiveName 'web-application.war'
+    }
+	
+project.dependencies{
+    compile(project(':services'))
+}

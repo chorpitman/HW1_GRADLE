@@ -1,0 +1,32 @@
+allprojects {
+    task hello << { task -> println "$task.project.name - is included" }
+	}
+
+task clean{
+    delete "JAR_GRADLE"
+}	
+	
+//task deployToTomcat(type: Copy) {
+//    from war.archivePath '$rootDir/JAR_GRADLE'
+//  into '${tomcatHome}/webapps'}	
+	
+subprojects {
+
+    hello << {println "- I depend on ROOT"}
+
+    apply plugin: 'java'
+	
+    repositories {
+        mavenCentral()
+	}
+
+	tasks.withType(Jar) {
+        destinationDir = file("$rootDir/JAR_GRADLE")
+		}
+		
+    dependencies {
+        testCompile 'junit:junit:4.11'
+        compile 'javax.servlet:javax.servlet-api:3.0.1'
+    }
+}
+

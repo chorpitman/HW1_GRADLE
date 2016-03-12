@@ -1,0 +1,11 @@
+project.dependencies{
+    compile(project(':services'))
+}
+
+jar {
+    manifest {
+	attributes 'Main-Class': 'com.builders.admin.AdminEntryPoint'
+    attributes"Class-Path": configurations.compile.collect { it.getName() }.join(' ')
+  }
+}
+
